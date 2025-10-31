@@ -14,10 +14,6 @@ export class InMemoryAlarmRepository implements AlarmRepository {
   save(alarm: Alarm): Promise<Alarm> {
     const persistenceModel = AlarmMapper.toPersistence(alarm);
     this.alarms.set(persistenceModel.id, persistenceModel);
-
-    const newEntity = this.alarms.get(persistenceModel.id);
-    if (!newEntity) throw new Error('Alarm not found');
-
-    return Promise.resolve(AlarmMapper.toDomain(newEntity));
+    return Promise.resolve(alarm);
   }
 }
