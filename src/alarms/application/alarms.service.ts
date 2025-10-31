@@ -3,7 +3,7 @@ import { CreateAlarmCommand } from 'src/alarms/application/commands/create-alarm
 
 @Injectable()
 export class AlarmsService {
-  create(createAlarmDto: CreateAlarmCommand) {
+  create(createAlarmCommand: CreateAlarmCommand) {
     return 'This action adds a new alarm';
   }
 
