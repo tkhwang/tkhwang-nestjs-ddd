@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
-import { Alarm } from 'src/alarms/domain/alarm';
-import { AlarmSeverity } from 'src/alarms/domain/value-objects/alarm-severity';
+import { Alarm } from '@/alarms/domain/alarm';
+import { AlarmSeverity } from '@/alarms/domain/value-objects/alarm-severity';
 
 export class AlarmFactory {
   create(name: string, severity: string) {
