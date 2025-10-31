@@ -1,6 +1,6 @@
 import { Alarm } from '@/alarms/domain/alarm';
 import { AlarmSeverity } from '@/alarms/domain/value-objects/alarm-severity';
-import { AlarmEntity } from '@/alarms/infrastructure/persistence/orm/entities/alarm.entity';
+import { AlarmEntity } from '@/alarms/infrastructure/persistence/in-memory/entities/alarm.entity';
 
 export class AlarmMapper {
   static toDomain(alarmEntity: AlarmEntity): Alarm {
