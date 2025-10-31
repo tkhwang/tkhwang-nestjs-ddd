@@ -20,6 +20,7 @@ export class CoreModule {
             TypeOrmModule.forRootAsync({
               inject: [ConfigService],
               useFactory: (configService: ConfigService) => {
+                const isDevelopment = configService.get<string>('NODE_ENV') === 'development';
                 return {
                   type: 'postgres',
                   host: configService.get<string>('DB_POSTGRE_HOST'),
@@ -27,6 +28,9 @@ export class CoreModule {
                   username: configService.get<string>('DB_POSTGRE_USERNAME'),
                   password: configService.get<string>('DB_POSTGRE_PASSWORD'),
                   database: configService.get<string>('DB_POSTGRE_NAME'),
+                  // configuration
+                  autoLoadEntities: true,
+                  synchronize: isDevelopment, // Only sync in development
                 };
               },
             }),
