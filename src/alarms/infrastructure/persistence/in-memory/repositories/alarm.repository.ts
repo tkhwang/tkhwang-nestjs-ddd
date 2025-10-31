@@ -1,7 +1,7 @@
 import { AlarmRepository } from '@/alarms/application/ports/alarm.repository';
 import { Alarm } from '@/alarms/domain/alarm';
 import { AlarmEntity } from '@/alarms/infrastructure/persistence/orm/entities/alarm.entity';
-import { AlarmMapper } from '@/alarms/infrastructure/persistence/orm/mappers/alarm.mappter';
+import { AlarmMapper } from '@/alarms/infrastructure/persistence/orm/mappers/alarm.mapper';
 
 export class InMemoryAlarmRepository implements AlarmRepository {
   private readonly alarms = new Map<string, AlarmEntity>();
