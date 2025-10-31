@@ -1,5 +1,5 @@
 import { AlarmRepository } from '@/alarms/application/ports/alarm.repository';
-import { OrmAlarmRepository } from '@/alarms/infrastructure/persistence/orm/repositories/alarm.repository';
+import { InMemoryAlarmRepository } from '@/alarms/infrastructure/persistence/in-memory/repositories/alarm.repository';
 import { Module } from '@nestjs/common';
 
 @Module({
@@ -7,7 +7,7 @@ import { Module } from '@nestjs/common';
   providers: [
     {
       provide: AlarmRepository,
-      useClass: OrmAlarmRepository,
+      useClass: InMemoryAlarmRepository,
     },
   ],
   exports: [AlarmRepository],
