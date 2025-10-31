@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAlarmCommand } from 'src/alarms/application/commands/create-alarm.command';
+import { CreateAlarmCommand } from '@/alarms/application/commands/create-alarm.command';
 
 @Injectable()
 export class AlarmsService {

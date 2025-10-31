@@ -1,4 +1,4 @@
-import { AlarmSeverity } from 'src/alarms/domain/value-objects/alarm-severity';
+import { AlarmSeverity } from '@/alarms/domain/value-objects/alarm-severity';
 
 export class Alarm {
   constructor(
